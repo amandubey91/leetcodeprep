@@ -1,21 +1,40 @@
 package SlidingWindow;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.List;
+import java.util.*;
 
 public class KDistinctSubstring {
 
 
     public static void main(String[] args) {
 
-
         System.out.println(subStringKDist("awaglknagawunagwkwagl", 4));
+        System.out.println(subStringKDistSlidingWindow("awaglknagawunagwkwagl", 4));
 
 
 
 
+    }
+
+    //Optmization
+    public static List<String> subStringKDistSlidingWindow(String s, int num) {
+        int start = 0, end = 0;
+        List<String> res = new ArrayList<>();
+        Window window = new Window();
+
+        while(end < s.length()){
+            window.add(s.charAt(end));
+            if(end - start + 1 == num){
+                if(window.different() == num) {
+                    if(!res.contains(s.substring(start, end + 1)))
+                        res.add(s.substring(start, end + 1));
+                }
+                window.remove(s.charAt(start));
+                start++;
+            }
+            end++;
+
+        }
+        return res;
     }
     public static List<String> subStringKDist(String inputStr, int num)
     {
@@ -48,5 +67,31 @@ public class KDistinctSubstring {
         }
         return result;
 
+    }
+}
+
+class Window {
+    Map<Character, Integer> count;
+    int nonzero;
+
+    Window() {
+        count = new HashMap();
+        nonzero = 0;
+    }
+
+    void add(Character x) {
+        count.put(x, count.getOrDefault(x, 0) + 1);
+        if (count.get(x) == 1)
+            nonzero++;
+    }
+
+    void remove(Character x) {
+        count.put(x, count.get(x) - 1);
+        if (count.get(x) == 0)
+            nonzero--;
+    }
+
+    int different() {
+        return nonzero;
     }
 }

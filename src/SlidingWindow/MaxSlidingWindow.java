@@ -8,10 +8,6 @@ public class MaxSlidingWindow {
     public static void main(String[] args) {
 
         System.out.println(Arrays.asList(maxSlidingWindowPriorityQueue(new int[]{1,3,-1,-3,5,3,6,7}, 3)));
-
-
-
-
     }
     public static int[] maxSlidingWindow(int[] a, int k) {
         int n = a.length;

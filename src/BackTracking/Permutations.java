@@ -9,7 +9,7 @@ public class Permutations {
 
     public static void main(String[] args) {
 
-        for(List<Integer> list : permute(new int[]{1, 2, 3})){
+        for(List<Integer> list : permute(new int[]{1, 2, 3, 4, 5, 6})){
             System.out.println(list);
         }
     }
@@ -21,17 +21,17 @@ public class Permutations {
     }
 
     private static void backtrack(List<List<Integer>> list, List<Integer> tempList, int [] nums){
-        if(tempList.size() == nums.length){
+        if(tempList.size() == 2){
             list.add(new ArrayList<>(tempList));
         } else{
             for(int i = 0; i < nums.length; i++){
 
                 if(tempList.contains(nums[i])) continue; // element already exists, skip
                 tempList.add(nums[i]);
-                System.out.println(tempList);
+                //System.out.println(tempList);
                 backtrack(list, tempList, nums);
                 tempList.remove(tempList.size() - 1);
-                System.out.println(tempList);
+                //System.out.println(tempList);
             }
         }
     }

@@ -42,7 +42,7 @@ public class WordLadder {
         list.add("cog");
 
 
-        System.out.println(ladderPath("hit", "cog", list));
+        System.out.println(ladderLength("hit", "hot", list));
 
 
     }

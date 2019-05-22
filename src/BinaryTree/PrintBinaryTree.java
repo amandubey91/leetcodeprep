@@ -10,7 +10,7 @@ public class PrintBinaryTree {
 
 
 
-        BTSerializeDeserialize codec = new BTSerializeDeserialize();
+
 
         TreeNode root = new TreeNode(1);
         TreeNode node1 = new TreeNode(2);

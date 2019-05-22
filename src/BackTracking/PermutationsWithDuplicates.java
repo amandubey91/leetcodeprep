@@ -26,7 +26,7 @@ public class PermutationsWithDuplicates {
             list.add(new ArrayList<>(tempList));
         } else{
             for(int i = 0; i < nums.length; i++){
-                if(used[i] || i > 0 && nums[i] == nums[i-1] && !used[i - 1]) continue;
+                if(used[i] || i > 0 && nums[i] == nums[i-1] && !used[i - 1]) continue; //Skip if its duplicate
                 used[i] = true;
                 tempList.add(nums[i]);
                 backtrack(list, tempList, nums, used);

@@ -103,8 +103,8 @@ public class CopyListWithRandom {
         // Iterate on the linked list until all nodes are cloned.
         while (oldNode != null) {
             // Get the clones of the nodes referenced by random and next pointers.
-            newNode.random = this.getClonedNode(oldNode.random);
-            newNode.next = this.getClonedNode(oldNode.next);
+            newNode.random = getClonedNode(oldNode.random);
+            newNode.next = getClonedNode(oldNode.next);
 
             // Move one step ahead in the linked list.
             oldNode = oldNode.next;

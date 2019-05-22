@@ -10,7 +10,7 @@ public class ClosestPair {
 
         printClosest(new int[]{3000,5000,7000,10000}, new int[]{2000,3000,4000,5000}, 4, 4, 10000);
 
-        printClosest(new int[]{2000,4000,6000}, new int[]{2000}, 3, 1, 7000);
+        //printClosest(new int[]{2000,4000,6000}, new int[]{2000}, 3, 1, 7000);
 
 //        int[][] points = new int[][]{{1,3}, {-2, 2}};
 //        kClosest(points, 1);
@@ -40,11 +40,11 @@ public class ClosestPair {
             {
                 res_l = l;
                 res_r = r;
-                diff = Math.abs(ar1[l] + ar2[r] - x);
+                diff = Math.abs(sumPair - x);
                 if(minDiff == diff){
                     List<Integer> pair = new ArrayList<>();
-                    pair.add(ar1[res_l]);
-                    pair.add(ar2[res_r]);
+                    pair.add(res_l);
+                    pair.add(res_r);
                     stack.push(pair);
                 }
                 if(diff < minDiff) {
@@ -52,15 +52,15 @@ public class ClosestPair {
                     while(!stack.isEmpty())
                         stack.pop();
                     List<Integer> pair = new ArrayList<>();
-                    pair.add(ar1[res_l]);
-                    pair.add(ar2[res_r]);
+                    pair.add(res_l);
+                    pair.add(res_r);
                     stack.push(pair);
                 }
             }
 
             // If sum of this pair is more than x, move to smaller
             // side
-            if (ar1[l] + ar2[r] > x)
+            if (sumPair > x)
                 r--;
             else  // move to the greater side
                 l++;

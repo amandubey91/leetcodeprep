@@ -8,29 +8,6 @@ public class CoinChange {
 
 
     public static void main(String[] args) {
-
-
-        System.out.println("Hello World!");
-        String[] strArr = new String[]{
-                "bella 0",
-                "bella 15",
-                "bella 59",
-                "bella 59",
-                "bella 60",
-                "bella 62",
-                "bella 80",
-                "bella 120",
-                "bella 180",
-                "bella 240",
-                "erica 0",
-                "erica 60",
-                "erica 120",
-                "erica 180",
-                "erica 240",
-                "erica 320",
-
-        };
-        //System.out.println(coinChange(new int[]{1,2,3}, 6));
         System.out.println(minimumCoinTopDown(3, new int[]{2}, new HashMap<>()));
 
     }
@@ -87,23 +64,28 @@ public class CoinChange {
         return dp[amount] > amount ? -1 : dp[amount];
     }
 
-    public static int coinChange(int[] coins, int amount) {
-        if (amount < 1) return 0;
-        return coinChange(coins, amount, new int[amount]);
+    public int coinChange(int[] coins, int amount) {
+        if(amount<1) return 0;
+        return helper(coins, amount, new HashMap<Integer, Integer>());
     }
 
-    private static int coinChange(int[] coins, int rem, int[] count) {
-        if (rem < 0) return -1;
-        if (rem == 0) return 0;
-        if (count[rem - 1] != 0) return count[rem - 1];
+    private int helper(int[] coins, int rem, HashMap<Integer, Integer> dp) { // rem: remaining coins after the last step; count[rem]: minimum number of coins to sum up to rem
+        if(rem<0) return -1; // not valid
+        if(rem==0) return 0; // completed
+        if(dp.containsKey(rem))
+            return dp.get(rem);
         int min = Integer.MAX_VALUE;
-        for (int coin : coins) {
-            int res = coinChange(coins, rem - coin, count);
-            if (res >= 0 && res < min)
-                min = 1 + res;
+        for(int coin : coins) {
+            int res = helper(coins, rem-coin, dp);
+            if(res>=0 && res < min)
+                min = 1+res;
         }
-        count[rem - 1] = (min == Integer.MAX_VALUE) ? -1 : min;
-        return count[rem - 1];
+        if(min==Integer.MAX_VALUE)
+            dp.put(rem, -1);
+        else
+            dp.put(rem, min);
+
+        return dp.get(rem);
     }
 
     public static int rob(int[] num) {

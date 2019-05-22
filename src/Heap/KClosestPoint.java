@@ -92,7 +92,6 @@ public class KClosestPoint {
         }
         //max heap
         final PriorityQueue<Point> kClosest = new PriorityQueue<>(M, Collections.reverseOrder());
-
         for (int i = 0; i < points.length; i++) {
             if (kClosest.size() < M) {
                 kClosest.add(points[i]);
