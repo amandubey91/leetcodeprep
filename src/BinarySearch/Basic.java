@@ -8,11 +8,12 @@ public class Basic {
 
 
         Basic ob = new Basic();
-        int arr[] = { 2, 3, 7, 10, 14, 16};
+        int arr[] = { 2, 3, 7, 10, 14, 16, 18};
         int n = arr.length;
         int x = 10;
-        int result = ob.binarySearchRec(arr, 0, n - 1, x);
-        result = ob.binarySearchItr(arr, 10);
+        //int result = ob.binarySearchexperiment(arr, 2);
+        int result = ob.binarySearch(arr, 1,2);
+        //int result = ob.binarySearch(arr, 0, 9);
         //result = ob.sorted_search(arr, 10);
         if (result == -1)
             System.out.println("Element not present");
@@ -22,35 +23,27 @@ public class Basic {
 
     }
 
-    int sorted_search(int[] elements, int target){
-        if(elements == null || elements.length <= 0)
-            return -1;
-        int left = 0;
-        int right = elements.length - 1;
-        while(left < right){
-            int middle = (left + right + 1) / 2;
-            if(elements[middle] > target)
-                right = middle - 1;
-            else
-                left = middle + 1;
+    int binarySearch(int[] nums, int startIndex, int target) {
+        int left = startIndex;
+        int right = nums.length - 1;
+        while (left < right) {
+            int mid = (left + right) / 2;
+            if (nums[mid] < target) {
+                left = mid;
+            } else {
+                right = mid - 1;
+            }
         }
-        if(elements[right] == target){
-            return right;
-        }
-        return -1;
-
+        return left;
     }
 
-    int binarySearchItr(int arr[], int x)
+    int binarySearchexperiment(int arr[], int x)
     {
         int l = 0, r = arr.length - 1;
-        int m = -1;
         while (l <= r) {
-            m = l + (r - l) / 2;
-
-            // Check if x is present at mid
-            if (arr[m] == x)
-                return m;
+            int m = l + (r - l) / 2;
+            if(arr[m] == x)
+                return m - 1;
 
             // If x greater, ignore left half
             if (arr[m] < x)
@@ -63,8 +56,25 @@ public class Basic {
 
         // if we reach here, then element was
         // not present
-        return Math.max(m, l);
+        return r;
     }
+
+
+    public int findMin(int[] nums, int k) {
+        int left = 0, right = nums.length - 1;
+        while(left < right){
+            int mid = (left + right) / 2;
+            if(nums[mid] < k){
+                left = mid;
+            }
+            else{
+                right = mid - 1;
+            }
+        }
+        return left;
+    }
+
+
 
     int binarySearchRec(int arr[], int l, int r, int x)
     {

@@ -21,7 +21,7 @@ public class SubSets {
     }
 
     private static void backtrack(List<List<Integer>> list , List<Integer> tempList, int [] nums, int start){
-        System.out.println(tempList);
+        //System.out.println(tempList);
         list.add(new ArrayList<>(tempList));
         for(int i = start; i < nums.length; i++){
             tempList.add(nums[i]);

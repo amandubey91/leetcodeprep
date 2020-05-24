@@ -13,8 +13,10 @@ public class GraphValidTree {
 //        write a function to check whether these edges make up a valid tree.
 
 
+        int[][] edges = {{0, 1}, {0, 2}, {0, 3}, {1, 3}, {1, 4}};
+        //System.out.println(validTree(5, edges));
+
     }
-    boolean validTree = true;
     public boolean validTree(int n, int[][] edges) {
         boolean[] visited = new boolean[n];
         if(edges.length == 0 && n == 1)
@@ -28,30 +30,30 @@ public class GraphValidTree {
             graph[edges[i][0]].add(edges[i][1]);
             graph[edges[i][1]].add(edges[i][0]);
         }
-        for(int i = 0; i < n; i++){
-            if(!visited[i] && !graph[i].isEmpty()){
-                dfs(i, graph, visited, -1);
-                break;
-            }
-        }
+
+        if(!dfs(0, graph, visited, -1))
+            return false;
+
         for(int i = 0; i < n; i++){
             if(!visited[i])
                 return false;
         }
-        return validTree;
-
+        return true;
     }
 
-    public void dfs(int node, ArrayList<Integer>[] graph, boolean[] visited, int parent){
+    public boolean dfs(int node, ArrayList<Integer>[] graph, boolean[] visited, int parent){
         if(visited[node]){
-            validTree = false;
-            return;
+            return false;
         }
         visited[node] = true;
 
         for(Integer i : graph[node]){
-            if(i != parent)
-                dfs(i, graph, visited, node);
+            if(i != parent){
+                if(!dfs(i, graph, visited, node)){
+                    return false;
+                }
+            }
         }
+        return true;
     }
 }

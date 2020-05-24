@@ -9,7 +9,7 @@ public class ReverseWords {
 
     public static void main(String[] args) {
 
-        System.out.println(reverseWordsWithoutSplit("a good   example"));
+        reverseWordsInPlace("a good   example".toCharArray());
     }
 
     public static String reverseWordsWithoutSplit(String s) {
@@ -42,7 +42,7 @@ public class ReverseWords {
         return sb.toString().trim();
     }
 
-    public void reverseWordsInPlace(char[] str) {
+    public static void reverseWordsInPlace(char[] str) {
         reverseStr(str, 0, str.length - 1);
         int start = 0;
         for(int i = 0; i < str.length; i++){
@@ -55,7 +55,7 @@ public class ReverseWords {
 
     }
 
-    public void reverseStr(char[] str, int low, int high){
+    public static void reverseStr(char[] str, int low, int high){
         while(low <= high){
             char temp = str[low];
             str[low] = str[high];

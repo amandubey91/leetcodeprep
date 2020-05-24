@@ -8,27 +8,34 @@ public class CourseSchedule_Topological {
 
 
     public static void main(String[] args) {
-        int[] res = canFinish(4, new int[][]{{1, 0}, {2, 0}, {3, 1}, {3, 2}});
+        //int[] res = canFinishtest(5, new int[][]{{1, 0}, {2, 0}, {3, 1}, {3, 2}, {0, 4}});
+        int[] res = canFinish(3, new int[][]{ {0, 1}, {0, 2}, {1, 2}});
         for(Integer i : res)
             System.out.print(i + " ");
 
     }
+
+
     public static int[] canFinish(int numCourses, int[][] prerequisites) {
         ArrayList[] graph = new ArrayList[numCourses];
         for(int i=0;i<numCourses;i++)
             graph[i] = new ArrayList();
 
         boolean[] visited = new boolean[numCourses];
+        boolean[] track = new boolean[numCourses];
         for(int i=0; i<prerequisites.length;i++){
             graph[prerequisites[i][1]].add(prerequisites[i][0]);
         }
 
         Stack<Integer> stack = new Stack<>();
+        //List<Integer> res = new ArrayList<>();
         int[] result = new int[numCourses];
 
         for(int i=0; i<numCourses; i++){
-            if(!dfs(graph,visited,i, stack))
-                return new int[numCourses];
+            if(!track[i]){
+                if(!dfs(graph,visited,i, stack, track))
+                    return new int[]{};
+            }
         }
         int index = 0;
         while(!stack.isEmpty()){
@@ -39,21 +46,26 @@ public class CourseSchedule_Topological {
         return result;
     }
 
-    private static boolean dfs(ArrayList[] graph, boolean[] visited, int course, Stack<Integer> stack){
+    private static boolean dfs(ArrayList[] graph, boolean[] visited, int course, Stack<Integer> stack, boolean[] track){
+
+
         if(visited[course])
             return false;
-        else
-            visited[course] = true;
-
+        if(track[course]){
+            return true;
+        }
+        visited[course] = true;
+        track[course] = true;
 
 
         for(int i=0; i<graph[course].size();i++){
-            if(!dfs(graph,visited,(int)graph[course].get(i), stack)) {
+            if(!dfs(graph,visited,(int)graph[course].get(i), stack, track)) {
                 return false;
             }
         }
-        if(!stack.contains(course))
-            stack.push(course);
+        stack.push(course);
+
+
 
         visited[course] = false;
         return true;
