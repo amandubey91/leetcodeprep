@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dbd4b5ad-b689-472d-b3b2-d4b2ed0040dc" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/leetcodeprep.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/leetcodeprep.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AmazonOA/SongPairProblem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AmazonOA/TurnstileProblem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/leetcodeprep/AmazonOA/CouponProblem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/leetcodeprep/AmazonOA/CouponProblem.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,12 +28,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
-    <option name="x" value="29" />
-    <option name="y" value="23" />
-    <option name="width" value="1440" />
-    <option name="height" value="877" />
-  </component>
   <component name="ProjectId" id="1nDJguBj3pdLUe6KLfy9WJAj983" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -46,6 +42,13 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -53,14 +56,17 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="AmazonOA" />
       <recent name="BFSDFS" />
       <recent name="BinaryTree" />
       <recent name="Design" />
       <recent name="Heap" />
-      <recent name="Trie" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CouponProblem.couponProblemTest">
+  <component name="RunManager" selected="JUnit.UniqueSubstringofSizeKProblem.uniqueSubstringofSizeKProblemTest">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -68,66 +74,8 @@
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <module />
     </configuration>
-    <configuration name="CombinationSum" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="BackTracking.CombinationSum" />
-      <module name="leetcodeprep" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="BackTracking.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CourseSchedule_Topological" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="BFSDFS.CourseSchedule_Topological" />
-      <module name="leetcodeprep" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="BFSDFS.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ReverseWords" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Misc.ReverseWords" />
-      <module name="leetcodeprep" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Misc.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CouponProblem" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="leetcodeprep" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="AmazonOA.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="AmazonOA" />
-      <option name="MAIN_CLASS_NAME" value="AmazonOA.CouponProblem" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -143,6 +91,74 @@
       <option name="PACKAGE_NAME" value="AmazonOA" />
       <option name="MAIN_CLASS_NAME" value="AmazonOA.CouponProblem" />
       <option name="METHOD_NAME" value="couponProblemTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SongPairProblem.SongPairProblemTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="leetcodeprep" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="AmazonOA.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="AmazonOA" />
+      <option name="MAIN_CLASS_NAME" value="AmazonOA.SongPairProblem" />
+      <option name="METHOD_NAME" value="SongPairProblemTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TurnstileProblem.SongPairProblemTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="leetcodeprep" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="AmazonOA.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="AmazonOA" />
+      <option name="MAIN_CLASS_NAME" value="AmazonOA.TurnstileProblem" />
+      <option name="METHOD_NAME" value="SongPairProblemTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UniqueSubstringofSizeKProblem.couponProblemTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="leetcodeprep" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="AmazonOA.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="AmazonOA" />
+      <option name="MAIN_CLASS_NAME" value="AmazonOA.UniqueSubstringofSizeKProblem" />
+      <option name="METHOD_NAME" value="couponProblemTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UniqueSubstringofSizeKProblem.uniqueSubstringofSizeKProblemTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="leetcodeprep" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="AmazonOA.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="AmazonOA" />
+      <option name="MAIN_CLASS_NAME" value="AmazonOA.UniqueSubstringofSizeKProblem" />
+      <option name="METHOD_NAME" value="uniqueSubstringofSizeKProblemTest" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
@@ -175,19 +191,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.CombinationSum" />
-      <item itemvalue="Application.ReverseWords" />
-      <item itemvalue="Application.CourseSchedule_Topological" />
-      <item itemvalue="JUnit.CouponProblem" />
       <item itemvalue="JUnit.CouponProblem.couponProblemTest" />
+      <item itemvalue="JUnit.SongPairProblem.SongPairProblemTest" />
+      <item itemvalue="JUnit.TurnstileProblem.SongPairProblemTest" />
+      <item itemvalue="JUnit.UniqueSubstringofSizeKProblem.couponProblemTest" />
+      <item itemvalue="JUnit.UniqueSubstringofSizeKProblem.uniqueSubstringofSizeKProblemTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UniqueSubstringofSizeKProblem.uniqueSubstringofSizeKProblemTest" />
+        <item itemvalue="JUnit.UniqueSubstringofSizeKProblem.couponProblemTest" />
+        <item itemvalue="JUnit.TurnstileProblem.SongPairProblemTest" />
+        <item itemvalue="JUnit.SongPairProblem.SongPairProblemTest" />
         <item itemvalue="JUnit.CouponProblem.couponProblemTest" />
-        <item itemvalue="JUnit.CouponProblem" />
-        <item itemvalue="Application.CourseSchedule_Topological" />
-        <item itemvalue="Application.ReverseWords" />
-        <item itemvalue="Application.CombinationSum" />
       </list>
     </recent_temporary>
   </component>
@@ -201,7 +217,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1581130917972</updated>
-      <workItem from="1610918845234" duration="314000" />
+      <workItem from="1610918845234" duration="570000" />
+      <workItem from="1610997974029" duration="2348000" />
+      <workItem from="1611171215751" duration="2642000" />
+      <workItem from="1611515653455" duration="1609000" />
     </task>
     <servers />
   </component>
@@ -209,26 +228,58 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1878" height="303" key="GridCell.Tab.0.bottom" timestamp="1610919086170">
+    <state x="2213" y="253" key="#com.intellij.ide.util.MemberChooser" timestamp="1610998761678">
       <screen x="1440" y="0" width="1920" height="1080" />
     </state>
-    <state width="1878" height="303" key="GridCell.Tab.0.bottom/0.0.1440.900/1440.0.1920.1080@1440.0.1920.1080" timestamp="1610919086170" />
-    <state width="1878" height="303" key="GridCell.Tab.0.center" timestamp="1610919086167">
+    <state x="2213" y="253" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900/1440.0.1920.1080@1440.0.1920.1080" timestamp="1610998761678" />
+    <state width="1878" height="302" key="GridCell.Tab.0.bottom" timestamp="1611611939993">
       <screen x="1440" y="0" width="1920" height="1080" />
     </state>
-    <state width="1878" height="303" key="GridCell.Tab.0.center/0.0.1440.900/1440.0.1920.1080@1440.0.1920.1080" timestamp="1610919086167" />
-    <state width="1878" height="303" key="GridCell.Tab.0.left" timestamp="1610919086166">
+    <state width="1878" height="302" key="GridCell.Tab.0.bottom/0.0.1440.900/1440.0.1920.1080@1440.0.1920.1080" timestamp="1611611939993" />
+    <state width="1878" height="302" key="GridCell.Tab.0.bottom/0.23.1440.877/1440.0.1920.1080@1440.0.1920.1080" timestamp="1611078728245" />
+    <state width="1878" height="302" key="GridCell.Tab.0.center" timestamp="1611611939990">
       <screen x="1440" y="0" width="1920" height="1080" />
     </state>
-    <state width="1878" height="303" key="GridCell.Tab.0.left/0.0.1440.900/1440.0.1920.1080@1440.0.1920.1080" timestamp="1610919086166" />
-    <state width="1878" height="303" key="GridCell.Tab.0.right" timestamp="1610919086169">
+    <state width="1878" height="302" key="GridCell.Tab.0.center/0.0.1440.900/1440.0.1920.1080@1440.0.1920.1080" timestamp="1611611939990" />
+    <state width="1878" height="302" key="GridCell.Tab.0.center/0.23.1440.877/1440.0.1920.1080@1440.0.1920.1080" timestamp="1611078728243" />
+    <state width="1878" height="302" key="GridCell.Tab.0.left" timestamp="1611611939988">
       <screen x="1440" y="0" width="1920" height="1080" />
     </state>
-    <state width="1878" height="303" key="GridCell.Tab.0.right/0.0.1440.900/1440.0.1920.1080@1440.0.1920.1080" timestamp="1610919086169" />
+    <state width="1878" height="302" key="GridCell.Tab.0.left/0.0.1440.900/1440.0.1920.1080@1440.0.1920.1080" timestamp="1611611939988" />
+    <state width="1878" height="302" key="GridCell.Tab.0.left/0.23.1440.877/1440.0.1920.1080@1440.0.1920.1080" timestamp="1611078728242" />
+    <state width="1878" height="302" key="GridCell.Tab.0.right" timestamp="1611611939992">
+      <screen x="1440" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="302" key="GridCell.Tab.0.right/0.0.1440.900/1440.0.1920.1080@1440.0.1920.1080" timestamp="1611611939992" />
+    <state width="1878" height="302" key="GridCell.Tab.0.right/0.23.1440.877/1440.0.1920.1080@1440.0.1920.1080" timestamp="1611078728244" />
+    <state width="1878" height="302" key="GridCell.Tab.1.bottom" timestamp="1611611939998">
+      <screen x="1440" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="302" key="GridCell.Tab.1.bottom/0.0.1440.900/1440.0.1920.1080@1440.0.1920.1080" timestamp="1611611939998" />
+    <state width="1878" height="302" key="GridCell.Tab.1.bottom/0.23.1440.877/1440.0.1920.1080@1440.0.1920.1080" timestamp="1611078728250" />
+    <state width="1878" height="302" key="GridCell.Tab.1.center" timestamp="1611611939996">
+      <screen x="1440" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="302" key="GridCell.Tab.1.center/0.0.1440.900/1440.0.1920.1080@1440.0.1920.1080" timestamp="1611611939996" />
+    <state width="1878" height="302" key="GridCell.Tab.1.center/0.23.1440.877/1440.0.1920.1080@1440.0.1920.1080" timestamp="1611078728248" />
+    <state width="1878" height="302" key="GridCell.Tab.1.left" timestamp="1611611939995">
+      <screen x="1440" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="302" key="GridCell.Tab.1.left/0.0.1440.900/1440.0.1920.1080@1440.0.1920.1080" timestamp="1611611939995" />
+    <state width="1878" height="302" key="GridCell.Tab.1.left/0.23.1440.877/1440.0.1920.1080@1440.0.1920.1080" timestamp="1611078728247" />
+    <state width="1878" height="302" key="GridCell.Tab.1.right" timestamp="1611611939997">
+      <screen x="1440" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="302" key="GridCell.Tab.1.right/0.0.1440.900/1440.0.1920.1080@1440.0.1920.1080" timestamp="1611611939997" />
+    <state width="1878" height="302" key="GridCell.Tab.1.right/0.23.1440.877/1440.0.1920.1080@1440.0.1920.1080" timestamp="1611078728249" />
     <state x="2123" y="439" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1610919030746">
       <screen x="1440" y="0" width="1920" height="1080" />
     </state>
     <state x="2123" y="439" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1440.900/1440.0.1920.1080@1440.0.1920.1080" timestamp="1610919030746" />
+    <state x="2065" y="241" width="670" height="676" key="search.everywhere.popup" timestamp="1610998011172">
+      <screen x="1440" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2065" y="241" width="670" height="676" key="search.everywhere.popup/0.0.1440.900/1440.0.1920.1080@1440.0.1920.1080" timestamp="1610998011172" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -262,6 +313,26 @@
           <url>file://$PROJECT_DIR$/src/BFSDFS/CourseSchedule_Topological.java</url>
           <line>19</line>
           <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/AmazonOA/SongPairProblem.java</url>
+          <line>68</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/AmazonOA/SongPairProblem.java</url>
+          <line>61</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/AmazonOA/SongPairProblem.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/AmazonOA/TurnstileProblem.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="20" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
