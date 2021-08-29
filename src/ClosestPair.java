@@ -8,7 +8,7 @@ public class ClosestPair {
 
 
 
-        printClosest(new int[]{3000,5000,7000,10000}, new int[]{2000,3000,4000,5000}, 4, 4, 10000);
+        printClosest(new int[]{3000,5000,7000,10000}, new int[]{2000,3000,4000,5000}, 4, 4, 17000);
 
         //printClosest(new int[]{2000,4000,6000}, new int[]{2000}, 3, 1, 7000);
 

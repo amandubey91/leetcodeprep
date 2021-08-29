@@ -1,7 +1,9 @@
 package Trie;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 //Given a 2D board and a word, find if the word exists in the grid.
 public class WordSearch_II {
@@ -80,5 +82,98 @@ public class WordSearch_II {
     class TrieNode {
         TrieNode[] next = new TrieNode[26];
         String word;
+    }
+
+    class Trie {
+        TrieNode root = new TrieNode();
+
+        public void putAWord(String word) {
+            TrieNode trie = root;
+            for(int i = 0; i < word.length(); i++) {
+                char ch = word.charAt(i);
+                if(trie.next[ch - 'a'] == null) {
+                    trie.next[ch - 'a'] = new TrieNode();
+                }
+                trie = trie.next[ch - 'a'];
+            }
+            trie.word = word;
+        }
+
+        public boolean doesWordExists(String word) {
+            if(word.equalsIgnoreCase("")) {
+                return false;
+            }
+            TrieNode trie = root;
+            for(int i = 0; i < word.length(); i++) {
+                char ch = word.charAt(i);
+                if(trie.next[ch - 'a'] == null) {
+                    return false;
+                }
+                trie = trie.next[ch - 'a'];
+            }
+            return trie.word.equalsIgnoreCase(word);
+        }
+
+        public boolean doesPrefixExists(String word) {
+            TrieNode trie = root;
+            for(int i = 0; i < word.length(); i++) {
+                char ch = word.charAt(i);
+                if(trie.next[ch - 'a'] == null) {
+                    return false;
+                }
+                trie = trie.next[ch - 'a'];
+            }
+            return true;
+        }
+
+    }
+    public List<String> findWordsBruteForce(char[][] board, String[] words) {
+        Set<String> result = new HashSet<>();
+        Trie trie = new Trie();
+        for(String word : words) {
+            trie.putAWord(word);
+        }
+
+
+        if(board == null || board.length == 0 || board[0].length == 0) {
+            return new ArrayList<>();
+        }
+        int n = board.length;
+        int m = board[0].length;
+        boolean[][] visited = new boolean[n][m];
+        for(int i = 0; i < n; i++) {
+            for(int j = 0; j < m; j++) {
+                helper(board, i, j, "", visited, result, trie);
+            }
+        }
+
+
+        return new ArrayList<>(result);
+    }
+
+    private void helper(char[][] board, int i, int j, String wordSoFar, boolean[][] visited,
+                        Set<String> result, Trie trie) {
+        int n = board.length;
+        int m = board[0].length;
+
+
+        if(i < 0 || i >= n || j < 0 || j >= m || visited[i][j] || !trie.doesPrefixExists(wordSoFar)) {
+            return;
+        }
+
+        wordSoFar += board[i][j];
+
+        if(trie.doesWordExists(wordSoFar)) {
+            result.add(wordSoFar);
+        }
+        visited[i][j] = true;
+
+        helper(board, i + 1, j, wordSoFar, visited, result, trie);
+        helper(board, i - 1, j, wordSoFar, visited, result, trie);
+        helper(board, i, j + 1, wordSoFar, visited, result, trie);
+        helper(board, i, j - 1, wordSoFar, visited, result, trie);
+
+        visited[i][j] = false;
+
     }
 }

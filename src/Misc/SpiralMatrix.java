@@ -1,7 +1,9 @@
 package Misc;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 import java.util.Stack;
 
 public class SpiralMatrix {
@@ -14,6 +16,54 @@ public class SpiralMatrix {
 
 
     }
+
+    public List<Integer> spiralOrderQueue(int[][] matrix) {
+        int nr = matrix.length;
+        int nc = matrix[0].length;
+        if(nr == 0) {
+            return new ArrayList<>();
+        }
+        int[] dr = new int[]{0, 1, 0, -1};
+        int[] dc = new int[]{1, 0, -1, 0};
+        boolean[][] visited = new boolean[nr][nc];
+        for(int i = 0; i < nr; i++) {
+            for(int j = 0; j < nc; j++) {
+                visited[i][j] = false;
+            }
+        }
+        Queue<Integer> queue = new LinkedList<>();
+        queue.add(0);
+        visited[0][0] = true;
+        List<Integer> result = new ArrayList<>();
+        int currDir = 0;
+        while(!queue.isEmpty()) {
+            int index = queue.remove();
+            int row = index / nc;
+            int col = index % nc;
+            result.add(matrix[row][col]);
+            int counter = 0;
+            while(row + dr[currDir] < 0 || row + dr[currDir] >= nr ||  col + dc[currDir] < 0 || col + dc[currDir] >= nc
+                    || visited[row + dr[currDir]][col + dc[currDir]]) {
+                if(counter == 4) {
+                    break;
+                }
+                currDir++;
+                if(currDir % 4 == 0) {
+                    currDir = 0;
+                }
+                counter++;
+            }
+            if(counter != 4) {
+                int newNode = (row + dr[currDir]) * nc + (col + dc[currDir]);
+                queue.add(newNode);
+                visited[row + dr[currDir]][col + dc[currDir]] = true;
+            }
+        }
+        return result;
+
+
+    }
+
     public List<Integer> spiralOrder(int[][] matrix) {
         List<Integer> res = new ArrayList<>();
         int nr = matrix.length;

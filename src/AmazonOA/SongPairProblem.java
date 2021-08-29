@@ -11,7 +11,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class SongPairProblem {
-    class Pair{
+    private class Pair{
         int a;
         int b;
         public Pair(int a, int b){
